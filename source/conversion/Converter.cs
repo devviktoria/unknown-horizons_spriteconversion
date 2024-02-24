@@ -22,7 +22,13 @@ class Converter
 
     public void ConvertImages()
     {
-        //GenerateTempSpriteSheets();
+        GenerateTempSpriteSheets();
+        FinalizeSpriteSheets();
+
+    }
+
+    private void FinalizeSpriteSheets()
+    {
         ClearTargetDirectory();
         List<string> dirs = new List<string>(Directory.EnumerateDirectories(this.tempDirectory));
 
@@ -118,7 +124,7 @@ class Converter
                 }
                 //Console.WriteLine("Imagefile: " + imageFile);
                 //Console.WriteLine("targetImageFile: " + targetObjectDirectory + Path.DirectorySeparatorChar + targetImageFile);
-                File.Copy(imageFile, targetObjectDirectory + Path.DirectorySeparatorChar + targetImageFile);
+                File.Copy(imageFile, targetObjectDirectory + Path.DirectorySeparatorChar + targetImageFile, true);
             }
 
             Console.WriteLine($"Processing: {objectName} END");
