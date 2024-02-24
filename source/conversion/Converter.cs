@@ -149,7 +149,7 @@ class Converter
                 string imageType = imageTypeDir.Substring(imageTypeDir.LastIndexOf(Path.DirectorySeparatorChar) + 1);
                 Console.WriteLine($"Image type: {imageType}");
                 string imageTypeDir45 = imageTypeDir + Path.DirectorySeparatorChar + "45";
-                int spriteSheetRowCount = 2;
+                int spriteSheetRowCount = 1;
                 int frameCount = Directory.GetFiles(imageTypeDir45).Length;
                 if (frameCount > 1)
                 {
